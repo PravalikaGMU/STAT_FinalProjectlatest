@@ -1,0 +1,48 @@
+"0","# Load necessary libraries"
+"0","library(readr)  # For data reading"
+"0","library(dplyr)  # For data manipulation"
+"2","
+Attaching package: ‘dplyr’
+
+"
+"2","The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+"
+"2","The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+"
+"0","library(ggplot2)  # For data visualization"
+"0","library(caret)  # For machine learning models"
+"2","Loading required package: lattice
+"
+"2","Registered S3 method overwritten by 'data.table':
+  method           from
+  print.data.table     
+"
+"0","# Read the dataset"
+"0","credit_data <- read.csv(""C:/Users/chpra/OneDrive/Documents/MS/STAT-515/Finalprojectreport/Final_output.csv"")"
+"0",""
+"0","# 1. Preprocess the data"
+"0","# Convert categorical variables to factors"
+"0","credit_data$Gender <- as.factor(credit_data$Gender)"
+"0","credit_data$Education <- as.factor(credit_data$Education)"
+"0","credit_data$Marriage <- as.factor(credit_data$Marriage)"
+"0","credit_data$default_payment_next_month <- as.factor(credit_data$default_payment_next_month)"
+"0",""
+"0","# Check for missing values"
+"0","sum(is.na(credit_data))"
+"1","[1]"
+"1"," 0"
+"1","
+"
+"0","# 2. Explore the data"
+"0","# Visualize default payments across different demographic groups"
+"0","plot1 = ggplot(credit_data, aes(x = default_payment_next_month, fill = Gender)) +"
+"0","  geom_bar() +"
+"0","  facet_wrap(~ Education + Marriage, scales = ""free"") +"
+"0","  labs(title = ""Default Payments by Gender, Education, and Marriage Status"")"
+"0","plot1"
