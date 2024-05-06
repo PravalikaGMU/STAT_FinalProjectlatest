@@ -1,0 +1,30 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "STAT 515"
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - section: "Final Project"
+        contents:
+          - index.qmd
+          - Research.qmd
+          - Codes.qmd
+          - References.qmd
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+editor: visual
+
